@@ -6,53 +6,113 @@
   </head>
 
   <body>
-    <div class="container">
-      <button type="button" class="Titlebutton" onclick="titleLogin()">
-        Login
-      </button>
-      <button type="button" class="Titlebutton" onclick="titleSignup()">
-        SignUp
-      </button>
-
-      <div class="signin" id="signin">
-        <label class="loginLable">Username</label>
-        <input
-          type="email"
-          class="loginfield"
-          id="username"
-          required
-        /><br /><br />
-        <lable class="loginLable">Password</lable>
-        <input
-          type="password"
-          class="loginfield"
-          id="password"
-          required
-        /><br /><br />
-        <button type="submit" onclick="login()" class="button">Login</button>
+    <div class="pageStyle">
+      <div class="topnav">
+        <a onclick="home()">Home</a>
+        <a type="submit" onclick="home()">Search</a>
       </div>
+      <div class="enclose">
+        <div class="container">
+          <button type="button" class="Titlebutton" onclick="titleLogin()">
+            Login
+          </button>
+          <button type="button" class="Titlebutton" onclick="titleSignup()">
+            SignUp
+          </button>
 
-      <div class="signup" id="signup">
-        <label class="loginLable">Username</label>
-        <input
-          type="email"
-          class="loginfield"
-          id="signUpusername"
-          required
-          placeholder="Enter your email"
-        /><br /><br />
-        <lable class="loginLable">Password </lable>
-        <input
-          type="password"
-          class="loginfield"
-          id="signUppassword"
-          required
-          placeholder="**********"
-        /><br /><br />
-        <button type="button" onclick="signup()" class="button">Sign Up</button>
+          <div class="signin" id="signin">
+            <form>
+              <label class="loginLable">Username</label>
+              <input
+                type="email"
+                class="loginfield"
+                id="username"
+                required
+                placeholder="Enter your SJSU email"
+                autofocus
+              /><br /><br />
+              <lable class="loginLable">Password</lable>
+              <input
+                type="password"
+                class="loginfield"
+                id="password"
+                required
+                placeholder="**********"
+              /><br /><br />
+              <!-- <input type="submit" onclick="login()" class="button" value="Login" /> -->
+              <button type="submit" onclick="login()" class="button">
+                Login
+              </button>
+            </form>
+          </div>
+
+          <div class="signup" id="signup">
+            <form>
+              <label class="loginLable">First Name</label>
+
+              <input
+                type="text"
+                class="loginfield"
+                id="signUpFName"
+                required
+                autofocus
+                placeholder="Enter First Name"
+                autofocus
+              /><br /><br />
+              <label class="loginLable">Last Name</label>
+
+              <input
+                type="tel"
+                class="loginfield"
+                id="signUpLName"
+                required
+                placeholder="Enter Last Name"
+              /><br /><br />
+              <label class="loginLable">Phone</label>
+
+              <input
+                type="text"
+                class="loginfield"
+                id="signUpPhone"
+                pattern="[\d]{10}"
+                maxlength="10"
+                required
+                placeholder="Enter Mobile Number"
+                title="Mobile Number had 10 digits"
+              /><br /><br />
+              <label class="loginLable">Username</label>
+
+              <input
+                type="email"
+                class="loginfield"
+                id="signUpusername"
+                required
+                placeholder="Enter your SJSU email"
+              /><br /><br />
+
+              <lable class="loginLable">Password </lable>
+              <input
+                type="password"
+                class="loginfield"
+                id="signUppassword"
+                required
+                placeholder="**********"
+              /><br /><br />
+              <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}"
+          title="Should have at least one number, one uppercase letter, lowercase letter and should be at least 7 characters" -->
+              <input
+                type="submit"
+                onclick="signup()"
+                class="button"
+                value="SignUp"
+              />
+            </form>
+
+            <!-- <button type="button" onclick="signup()" class="button">Sign Up</button> -->
+          </div>
+        </div>
       </div>
     </div>
-
     <script type="text/javascript" src="login.js"></script>
   </body>
 </html>

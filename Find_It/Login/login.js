@@ -1,10 +1,24 @@
 "use strict";
 
 function signup() {
-  let name = document.getElementById("signUpusername").value;
+  let usrname = document.getElementById("signUpusername").value;
   let pswd = document.getElementById("signUppassword").value;
+  let firstName = document.getElementById("signUpFName").value;
+  let lastName = document.getElementById("signUpLName").value;
+  let phone = document.getElementById("signUpPhone").value;
 
-  let userData = { username: name, password: pswd };
+  if (usrname.slice(usrname.length - 8, usrname.length) !== "sjsu.edu") {
+    window.alert("Please use SJSU email.");
+    return;
+  }
+
+  let userData = {
+    username: usrname,
+    password: pswd,
+    fname: firstName,
+    lname: lastName,
+    phone: phone,
+  };
 
   if (localStorage.getItem("userDetails") == null) {
     localStorage.setItem("userDetails", "[]");
@@ -31,17 +45,26 @@ function login() {
   let existingUserDetails = JSON.parse(localStorage.getItem("userDetails"));
 
   let x;
+  let found = false;
   for (x in existingUserDetails) {
-    if (
-      existingUserDetails[x].username === userData.username &&
-      existingUserDetails[x].password == userData.password
-    ) {
-      sessionStorage.setItem("userDetails", JSON.stringify(userData));
-      window.alert("Login Successful..!");
-      return;
+    //console.log(existingUserDetails[x].username);
+    let { username, password } = existingUserDetails[x];
+    if (username === userData.username && password === userData.password) {
+      found = true;
+      break;
     }
   }
-  window.alert("Incorrect Credentials..!");
+  if (found) {
+    sessionStorage.setItem("userDetails", JSON.stringify(userData));
+
+    window.location.href = "/Home/home.html";
+  } else window.alert("Incorrect Credentials..!");
+}
+
+function home() {
+  let details = JSON.parse(localStorage.getItem("userDetails"));
+  if (details !== null) window.location.href = "/Home/home.html";
+  else window.alert("Please login...!");
 }
 
 function Titlelogin() {
