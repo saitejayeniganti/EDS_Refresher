@@ -6,9 +6,25 @@ function signup() {
   let firstName = document.getElementById("signUpFName").value;
   let lastName = document.getElementById("signUpLName").value;
   let phone = document.getElementById("signUpPhone").value;
+  let dob = document.getElementById("dob").value;
+
+  if (
+    usrname == "" ||
+    pswd == "" ||
+    firstName == "" ||
+    lastName == "" ||
+    phone == "" ||
+    dob == ""
+  )
+    return;
 
   if (usrname.slice(usrname.length - 8, usrname.length) !== "sjsu.edu") {
-    window.alert("Please use SJSU email.");
+    window.alert("Please use SJSU email..!");
+    return;
+  }
+
+  if (phone.length > 10 || phone.length < 10) {
+    window.alert("Wrong Phone Number format ..!");
     return;
   }
 
@@ -47,16 +63,16 @@ function login() {
   let x;
   let found = false;
   for (x in existingUserDetails) {
-    //console.log(existingUserDetails[x].username);
+    console.log(x);
+
     let { username, password } = existingUserDetails[x];
-    if (username === userData.username && password === userData.password) {
+    if (username == userData.username && password == userData.password) {
       found = true;
       break;
     }
   }
   if (found) {
     sessionStorage.setItem("userDetails", JSON.stringify(userData));
-
     window.location.href = "/Home/home.html";
   } else window.alert("Incorrect Credentials..!");
 }

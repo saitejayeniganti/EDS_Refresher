@@ -21,29 +21,27 @@
           </button>
 
           <div class="signin" id="signin">
-            <form>
-              <label class="loginLable">Username</label>
-              <input
-                type="email"
-                class="loginfield"
-                id="username"
-                required
-                placeholder="Enter your SJSU email"
-                autofocus
-              /><br /><br />
-              <lable class="loginLable">Password</lable>
-              <input
-                type="password"
-                class="loginfield"
-                id="password"
-                required
-                placeholder="**********"
-              /><br /><br />
-              <!-- <input type="submit" onclick="login()" class="button" value="Login" /> -->
-              <button type="submit" onclick="login()" class="button">
-                Login
-              </button>
-            </form>
+            <label class="loginLable">Username</label>
+            <input
+              type="email"
+              class="loginfield"
+              id="username"
+              required
+              placeholder="Enter your SJSU email"
+              autofocus
+            /><br /><br />
+            <lable class="loginLable">Password</lable>
+            <input
+              type="password"
+              class="loginfield"
+              id="password"
+              required
+              placeholder="**********"
+            /><br /><br />
+            <!-- <input type="submit" onclick="login()" class="button" value="Login" /> -->
+            <button type="submit" onclick="login()" class="button">
+              Login
+            </button>
           </div>
 
           <div class="signup" id="signup">
@@ -62,16 +60,25 @@
               <label class="loginLable">Last Name</label>
 
               <input
-                type="tel"
+                type="text"
                 class="loginfield"
                 id="signUpLName"
                 required
                 placeholder="Enter Last Name"
               /><br /><br />
+              <label class="loginLable">Date of Birth</label>
+
+              <input
+                type="date"
+                class="loginfield"
+                id="dob"
+                required
+                placeholder="Enter date of birth"
+              /><br /><br />
               <label class="loginLable">Phone</label>
 
               <input
-                type="text"
+                type="tel"
                 class="loginfield"
                 id="signUpPhone"
                 pattern="[\d]{10}"
@@ -80,6 +87,7 @@
                 placeholder="Enter Mobile Number"
                 title="Mobile Number had 10 digits"
               /><br /><br />
+
               <label class="loginLable">Username</label>
 
               <input
@@ -89,7 +97,6 @@
                 required
                 placeholder="Enter your SJSU email"
               /><br /><br />
-
               <lable class="loginLable">Password </lable>
               <input
                 type="password"

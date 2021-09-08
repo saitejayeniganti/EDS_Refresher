@@ -75,6 +75,6 @@ function locSearch() {
 }
 
 function login() {
-  localStorage.clear();
+  sessionStorage.Storage.clear();
   window.location.href = "/Login/login.html";
 }
