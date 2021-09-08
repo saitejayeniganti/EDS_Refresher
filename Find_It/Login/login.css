@@ -11,11 +11,15 @@
   margin: 5px;
   padding-left: 10px;
 }
-
+.Signupfields {
+  display: inline;
+  align-content: flex-start;
+}
 .loginLable {
   font-family: "Times New Roman", Times, serif;
   width: 150px;
   margin: 5px;
+  display: inline-block;
 }
 
 .button {
@@ -55,7 +59,7 @@
   padding: 15px;
   position: relative;
   display: inline-block;
-  margin-left: 35%;
+  margin-left: 30%;
   text-align: -webkit-center;
 }
 
